@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  conversation: one
+  disconnected_at: 2019-02-01 18:35:39
+
+two:
+  user: two
+  conversation: two
+  disconnected_at: 2019-02-01 18:35:39
