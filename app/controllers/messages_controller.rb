@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
 
     data = { message: "new message", result: @message }
     
-    ConversationsChannel.broadcast_to @conversation, render_result( data )
+    ConversationsChannel.broadcast_to @conversation, serialize_response( data )
 
     render_result{ data }
   end

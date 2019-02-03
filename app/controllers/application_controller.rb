@@ -26,7 +26,7 @@ class ApplicationController < ActionController::API
     end
   end
 
-  def render_result( status = :success )
+  private; def render_result( status = :success )
     @message = @message.merge( yield ) if block_given?
     render json: @message.to_json, status: status
   end
