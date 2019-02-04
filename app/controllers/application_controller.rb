@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   private; def init_message 
     @message = {
       message: "ok",
-      status: :success
+      status: :ok
     }
   end
 
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::API
     end
   end
 
-  private; def render_result( status = :success )
+  private; def render_result( status = :ok )
     @message = @message.merge( yield ) if block_given?
     render json: @message.to_json, status: status
   end

@@ -13,10 +13,10 @@ class SessionsController < ApplicationController
   end
 
   def create 
-    @user = User.find_by_email( session_params[ :email ] )
+    @user = User.find_by_email( session_params[ :email ].downcase )
     if @user 
       if @user.authenticate( session_params[ :password ] )
-        render_result { { result: @user, message: "logged in" } }
+        render_result{ { result: @user, message: "logged in" } }
       else 
         render_result( :unauthorized ) do 
           {
